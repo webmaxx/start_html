@@ -48,7 +48,10 @@ var smartgridSettings = {
 };
 
 gulp.task('html', function() {
-    return gulp.src('app/templates/**/*.html')
+    return gulp.src([
+            'app/templates/**/*.html',
+            '!app/templates/**/_*.html'
+        ])
         .pipe(plumber())
         .pipe(fileinclude({
             prefix: '@@',

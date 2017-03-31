@@ -77,7 +77,10 @@ gulp.task('smartgrid', function() {
 });
 
 gulp.task('sass', function() {
-    gulp.src('app/sass/**/*.sass')
+    gulp.src([
+            'app/sass/**/*.sass',
+            'app/sass/**/*.scss'
+        ])
         .pipe(plumber())
         .pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
@@ -127,7 +130,7 @@ gulp.task('browser-sync', function() {
 gulp.task('watch', ['html', 'pug', 'smartgrid', 'sass', 'js', 'browser-sync'], function() {
     gulp.watch(['app/templates/**/*.html', 'app/templates/**/*.htm'], ['html']);
     gulp.watch(['app/templates/**/*.pug'], ['pug']);
-    gulp.watch('app/sass/**/*.sass', ['sass']);
+    gulp.watch(['app/sass/**/*.sass', 'app/sass/**/*.scss'], ['sass']);
     gulp.watch(['libs/**/*.js', 'app/js/app.js'], ['js']);
     gulp.watch('app/*.html', browserSync.reload);
 });
@@ -137,6 +140,7 @@ gulp.task('build', ['removedist', 'html', 'pug', 'smartgrid', 'sass', 'js'], fun
     var buildFiles = gulp.src([
             'app/**/*.html',
             '!app/templates/**/*.html',
+            '!app/libs/**/*.html',
             'app/.htaccess'
         ]).pipe(gulp.dest('dist'));
 

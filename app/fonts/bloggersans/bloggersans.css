@@ -1,0 +1,48 @@
+@font-face {
+    font-family: 'Blogger Sans';
+    src: local('Blogger Sans Medium'), local('BloggerSans-Medium'), url('Bloggersansmedium.woff2') format('woff2'), url('Bloggersansmedium.woff') format('woff'), url('Bloggersansmedium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Blogger Sans';
+    src: local('Blogger Sans Medium Italic'), local('BloggerSans-MediumItalic'), url('Bloggersansmediumitalic.woff2') format('woff2'), url('Bloggersansmediumitalic.woff') format('woff'), url('Bloggersansmediumitalic.ttf') format('truetype');
+    font-weight: 500;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Blogger Sans';
+    src: local('Blogger Sans Italic'), local('BloggerSans-Italic'), url('Bloggersansitalic.woff2') format('woff2'), url('Bloggersansitalic.woff') format('woff'), url('Bloggersansitalic.ttf') format('truetype');
+    font-weight: 400;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Blogger Sans';
+    src: local('Blogger Sans Light'), local('BloggerSans-Light'), url('Bloggersanslight.woff2') format('woff2'), url('Bloggersanslight.woff') format('woff'), url('Bloggersanslight.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Blogger Sans';
+    src: local('Blogger Sans'), local('BloggerSans'), url('Bloggersans.woff2') format('woff2'), url('Bloggersans.woff') format('woff'), url('Bloggersans.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Blogger Sans';
+    src: local('Blogger Sans Bold Italic'), local('BloggerSans-BoldItalic'), url('Bloggersansbolditalic.woff2') format('woff2'), url('Bloggersansbolditalic.woff') format('woff'), url('Bloggersansbolditalic.ttf') format('truetype');
+    font-weight: 700;
+    font-style: italic;
+}
+@font-face {
+    font-family: 'Blogger Sans';
+    src: local('Blogger Sans Bold'), local('BloggerSans-Bold'), url('Bloggersansbold.woff2') format('woff2'), url('Bloggersansbold.woff') format('woff'), url('Bloggersansbold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Blogger Sans';
+    src: local('Blogger Sans Light Italic'), local('BloggerSans-LightItalic'), url('Bloggersanslightitalic.woff2') format('woff2'), url('Bloggersanslightitalic.woff') format('woff'), url('Bloggersanslightitalic.ttf') format('truetype');
+    font-weight: 300;
+    font-style: italic;
+}

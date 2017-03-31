@@ -1,0 +1,5 @@
+app/css/
+app/js/*.min.js
+dist/
+node_modules/
+**/Thumbs.db

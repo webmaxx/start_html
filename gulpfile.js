@@ -77,7 +77,7 @@ gulp.task('smartgrid', function() {
 });
 
 gulp.task('sass', function() {
-    gulp.src([
+    return gulp.src([
             'app/sass/**/*.sass',
             'app/sass/**/*.scss'
         ])
@@ -86,16 +86,17 @@ gulp.task('sass', function() {
         .pipe(autoprefixer(['last 15 versions', '> 1%', 'ie 8', 'ie 7'], { cascade: true }))
         .pipe(gcmq())
         .pipe(gulp.dest('app/css'));
+});
 
+gulp.task('css', ['sass'], function() {
     return gulp.src([
             'app/css/**/*.css',
             '!app/css/**/*.min.css'
         ])
-        .pipe(plumber())
         .pipe(rename({suffix: '.min', prefix : ''}))
         .pipe(cleanCSS())
         .pipe(gulp.dest('app/css'))
-        .pipe(browserSync.reload({stream: true}))
+        .pipe(browserSync.reload({stream: true}));
 });
 
 gulp.task('custom-js', function() {
@@ -127,15 +128,15 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('watch', ['html', 'pug', 'smartgrid', 'sass', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['html', 'pug', 'smartgrid', 'css', 'js', 'browser-sync'], function() {
     gulp.watch(['app/templates/**/*.html', 'app/templates/**/*.htm'], ['html']);
     gulp.watch(['app/templates/**/*.pug'], ['pug']);
-    gulp.watch(['app/sass/**/*.sass', 'app/sass/**/*.scss'], ['sass']);
+    gulp.watch(['app/sass/**/*.sass', 'app/sass/**/*.scss'], ['css']);
     gulp.watch(['libs/**/*.js', 'app/js/app.js'], ['js']);
     gulp.watch('app/*.html', browserSync.reload);
 });
 
-gulp.task('build', ['removedist', 'html', 'pug', 'smartgrid', 'sass', 'js'], function() {
+gulp.task('build', ['removedist', 'html', 'pug', 'smartgrid', 'css', 'js'], function() {
 
     var buildFiles = gulp.src([
             'app/**/*.html',

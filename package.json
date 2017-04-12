@@ -1,9 +1,13 @@
 {
   "name": "starthtml",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Start HTML Template",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/webmaxx/start_html/"
+  },
   "author": "webmaxx",
-  "license": "none",
+  "license": "MIT",
   "devDependencies": {
     "browser-sync": "^2.18.8",
     "del": "^2.2.2",

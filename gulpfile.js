@@ -99,20 +99,21 @@ gulp.task('css', ['sass'], function() {
         .pipe(browserSync.reload({stream: true}));
 });
 
-gulp.task('custom-js', function() {
+gulp.task('js-libs', function() {
     return gulp.src([
-            'app/js/app.js'
+            'app/libs/jquery/dist/jquery.min.js',
+            'app/libs/wow/dist/wow.min.js'
         ])
-        .pipe(concat('app.min.js'))
+        .pipe(concat('libs.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('app/js'));
 });
 
-gulp.task('js', ['custom-js'], function() {
+gulp.task('js', ['js-libs'], function() {
     return gulp.src([
-            'app/libs/jquery/dist/jquery.min.js'
+            'app/js/app.js'
         ])
-        .pipe(concat('libs.min.js'))
+        .pipe(concat('app.min.js'))
         .pipe(uglify())
         .pipe(gulp.dest('app/js'))
         .pipe(browserSync.reload({stream: true}));

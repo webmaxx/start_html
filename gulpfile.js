@@ -91,9 +91,8 @@ gulp.task('pug', function() {
             '!app/templates/**/_*.pug'
         ])
         .pipe(plumber())
-        .pipe(pug({
-            pretty: true
-        }))
+        .pipe(pug())
+        .pipe(htmlbeautify(htmlbeautifySettings))
         .pipe(gulp.dest('app/'));
 });
 

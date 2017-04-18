@@ -19,6 +19,7 @@ Start HTML Template
 * [gulp-concat][gulp-concat]
 * [gulp-pug][gulp-pug]
 * [gulp-file-include][gulp-file-include]
+* [gulp-html-beautify][gulp-html-beautify]
 * [gulp-sass][gulp-sass]
 * [gulp-autoprefixer][gulp-autoprefixer]
 * [gulp-group-css-media-queries][gulp-group-css-media-queries]
@@ -94,6 +95,7 @@ Start HTML Template
 [gulp-concat]: https://www.npmjs.com/package/gulp-concat
 [gulp-pug]: https://www.npmjs.com/package/gulp-pug
 [gulp-file-include]: https://www.npmjs.com/package/gulp-file-include
+[gulp-html-beautify]: https://www.npmjs.com/package/gulp-html-beautify
 [gulp-sass]: https://www.npmjs.com/package/gulp-sass
 [gulp-autoprefixer]: https://www.npmjs.com/package/gulp-autoprefixer
 [gulp-group-css-media-queries]: https://www.npmjs.com/package/gulp-group-css-media-queries

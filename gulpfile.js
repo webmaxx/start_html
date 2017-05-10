@@ -201,7 +201,7 @@ gulp.task('build', ['removedist', 'html', 'pug', 'smartgrid', 'css', 'js'], func
 });
 
 gulp.task('deploy', function() {
-    return gulp.src('dist/*')
+    return gulp.src('dist/**/*')
         .pipe(sftp(sftpSettings));
 });
 

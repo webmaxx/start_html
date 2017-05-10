@@ -5,3 +5,4 @@ app/**/*.html
 dist/
 node_modules/
 **/Thumbs.db
+.sftppass

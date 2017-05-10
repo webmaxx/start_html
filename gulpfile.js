@@ -13,11 +13,20 @@ var gulp           = require('gulp'),
     rename         = require('gulp-rename'),
     cache          = require('gulp-cache'),
     notify         = require('gulp-notify'),
+    sftp           = require('gulp-sftp'),
     imagemin       = require('gulp-imagemin'),
     pngquant       = require('imagemin-pngquant'),
     del            = require('del'),
     smartgrid      = require('smart-grid'),
     browserSync    = require('browser-sync');
+
+var sftpSettings = {
+    host: 'sitename.ru',
+    remotePath: '/',
+    port: 22,
+    authFile: '.sftppass',
+    auth: 'keyMain'
+};
 
 var smartgridSettings = {
     "filename": '_smart-grid',
@@ -189,6 +198,11 @@ gulp.task('build', ['removedist', 'html', 'pug', 'smartgrid', 'css', 'js'], func
         .pipe(cache(imagemin()))
         .pipe(gulp.dest('dist/img'));
 
+});
+
+gulp.task('deploy', function() {
+    return gulp.src('dist/*')
+        .pipe(sftp(sftpSettings));
 });
 
 gulp.task('removedist', function() { return del.sync('dist'); });

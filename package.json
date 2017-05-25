@@ -1,6 +1,6 @@
 {
   "name": "starthtml",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Start HTML Template",
   "repository": {
     "type": "git",
@@ -29,6 +29,7 @@
     "gulp-uglify": "^2.1.0",
     "gulp-util": "^3.0.8",
     "imagemin-pngquant": "^5.0.0",
-    "smart-grid": "^1.0.3"
+    "smart-grid": "^1.0.3",
+    "ssh2": "^0.5.4"
   }
 }

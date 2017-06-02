@@ -7,6 +7,7 @@ Start HTML Template
 
 * [Gulp][gulp]
 * [Bower][bower]
+* [Nunjucks][nunjucks]
 * [Pug][pug]
 * [Sass][sass]
 * [Smart Grid][smart-grid]
@@ -90,6 +91,7 @@ Start HTML Template
 
 [gulp]: http://gulpjs.com/
 [bower]: https://bower.io/
+[nunjucks]: http://mozilla.github.io/nunjucks/
 [pug]: https://pugjs.org/
 [sass]: http://sass-lang.com/
 [smart-grid]: https://www.npmjs.com/package/smart-grid/

@@ -3,6 +3,7 @@ var gulp           = require('gulp'),
     gutil          = require('gulp-util' ),
     concat         = require('gulp-concat'),
     pug            = require('gulp-pug'),
+    fileinclude    = require('gulp-file-include'),
     nunjucksRender = require('gulp-nunjucks-render'),
     htmlbeautify   = require('gulp-html-beautify'),
     sass           = require('gulp-sass'),
@@ -86,6 +87,20 @@ gulp.task('html', function() {
             '!app/templates/**/_*.html'
         ])
         .pipe(plumber())
+        .pipe(fileinclude({
+            prefix: '@@',
+            basepath: '@file'
+        }))
+        .pipe(htmlbeautify(htmlbeautifySettings))
+        .pipe(gulp.dest('app/'));
+});
+
+gulp.task('njk', function() {
+    return gulp.src([
+            'app/templates/**/*.njk',
+            '!app/templates/**/_*.njk'
+        ])
+        .pipe(plumber())
         .pipe(nunjucksRender({
             path: 'app/templates'
         }))
@@ -161,15 +176,16 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('watch', ['html', 'pug', 'smartgrid', 'css', 'js', 'browser-sync'], function() {
+gulp.task('watch', ['html', 'njk', 'pug', 'smartgrid', 'css', 'js', 'browser-sync'], function() {
     gulp.watch(['app/templates/**/*.html', 'app/templates/**/*.htm'], ['html']);
+    gulp.watch(['app/templates/**/*.njk'], ['njk']);
     gulp.watch(['app/templates/**/*.pug'], ['pug']);
     gulp.watch(['app/sass/**/*.sass', 'app/sass/**/*.scss'], ['css']);
     gulp.watch(['libs/**/*.js', 'app/js/app.js'], ['js']);
     gulp.watch('app/*.html', browserSync.reload);
 });
 
-gulp.task('build', ['removedist', 'html', 'pug', 'smartgrid', 'css', 'js'], function() {
+gulp.task('build', ['removedist', 'html', 'njk', 'pug', 'smartgrid', 'css', 'js'], function() {
 
     var buildFiles = gulp.src([
             'app/**/*.html',

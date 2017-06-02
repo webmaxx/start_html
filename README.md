@@ -20,6 +20,7 @@ Start HTML Template
 * [gulp-concat][gulp-concat]
 * [gulp-pug][gulp-pug]
 * [gulp-nunjucks-render][gulp-nunjucks-render]
+* [gulp-file-include][gulp-file-include]
 * [gulp-html-beautify][gulp-html-beautify]
 * [gulp-sass][gulp-sass]
 * [gulp-autoprefixer][gulp-autoprefixer]
@@ -63,6 +64,7 @@ Start HTML Template
 ## Gulp-задачи
 
 * `html` - компилирование html-шаблонов
+* `njk` - компилирование [nunjucks][nunjucks]-шаблонов
 * `pug` - компилирование [pug][pug]-шаблонов
 * `smartgrid` - генерация **[Smart Grid][smart-grid]** сетки
 * `sass` - компилирование **[sass][sass]** и **scss** файлов
@@ -82,7 +84,8 @@ Start HTML Template
 * Все шаблоны должны находиться в папке `app/templates`.
 * Есть возможность использовать как простые **html**-шаблоны, так и шаблоны в формате **[pug][pug]**.
 * Шаблоны компилируются и складываются в корень папки **app**. Трогать их не надо.
-* Для удобства, с html-шаблонами работает плагин **[gulp-nunjucks-render][gulp-nunjucks-render]**, позволяющий использовать конструкции вида `{% include '_template_name.html' %}`. Подробнее можно почитать [тут][gulp-nunjucks-render].
+* Для удобства, с html-шаблонами работает плагин **[gulp-file-include][gulp-file-include]**, позволяющий использовать конструкции вида `@@include('_template_name.html')`. Подробнее можно почитать [тут][gulp-file-include].
+* Шаблоны с расширением `*.njk` ([Nunjucks][nunjucks]) обрабатываются плагином **[gulp-nunjucks-render][gulp-nunjucks-render]**. Подробнее можно почитать [тут][gulp-nunjucks-render]. 
 * Есть возможность устанавливать дополнительные библиотеки через [Bower][bower] (например `bower i packageName`). Устанавливаются в папку `app/libs`.
 * Все **css**-стили сторонних библиотек следует импортировать в файле `app/sass/_libs.sass`.
 * Все **javascript**-файлы сторонних библиотек следует подключать в файле `gulpfile.js` в задаче `js-libs`.
@@ -100,6 +103,7 @@ Start HTML Template
 [gulp-concat]: https://www.npmjs.com/package/gulp-concat
 [gulp-pug]: https://www.npmjs.com/package/gulp-pug
 [gulp-nunjucks-render]: https://www.npmjs.com/package/gulp-nunjucks-render
+[gulp-file-include]: https://www.npmjs.com/package/gulp-file-include
 [gulp-html-beautify]: https://www.npmjs.com/package/gulp-html-beautify
 [gulp-sass]: https://www.npmjs.com/package/gulp-sass
 [gulp-autoprefixer]: https://www.npmjs.com/package/gulp-autoprefixer

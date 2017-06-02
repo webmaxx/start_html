@@ -3,7 +3,7 @@ var gulp           = require('gulp'),
     gutil          = require('gulp-util' ),
     concat         = require('gulp-concat'),
     pug            = require('gulp-pug'),
-    fileinclude    = require('gulp-file-include'),
+    nunjucksRender = require('gulp-nunjucks-render'),
     htmlbeautify   = require('gulp-html-beautify'),
     sass           = require('gulp-sass'),
     autoprefixer   = require('gulp-autoprefixer'),
@@ -86,9 +86,8 @@ gulp.task('html', function() {
             '!app/templates/**/_*.html'
         ])
         .pipe(plumber())
-        .pipe(fileinclude({
-            prefix: '@@',
-            basepath: '@file'
+        .pipe(nunjucksRender({
+            path: 'app/templates'
         }))
         .pipe(htmlbeautify(htmlbeautifySettings))
         .pipe(gulp.dest('app/'));

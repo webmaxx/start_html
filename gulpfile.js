@@ -14,12 +14,22 @@ var gulp           = require('gulp'),
     rename         = require('gulp-rename'),
     cache          = require('gulp-cache'),
     notify         = require('gulp-notify'),
+    rsync          = require('gulp-rsync'),
     sftp           = require('gulp-sftp'),
     imagemin       = require('gulp-imagemin'),
     pngquant       = require('imagemin-pngquant'),
     del            = require('del'),
     smartgrid      = require('smart-grid'),
     browserSync    = require('browser-sync');
+
+var deployMethod = 'rsync'; // rsync, sftp
+
+var rsyncSettings = {
+    root: 'dist/',
+    hostname: 'sitename.ru',
+    // username: 'username',
+    destination: 'path/to/site/'
+};
 
 var sftpSettings = {
     host: 'sitename.ru',
@@ -216,8 +226,16 @@ gulp.task('build', ['removedist', 'html', 'njk', 'pug', 'smartgrid', 'css', 'js'
 });
 
 gulp.task('deploy', function() {
-    return gulp.src('dist/**/*')
-        .pipe(sftp(sftpSettings));
+    switch (deployMethod) {
+        case 'rsync':
+            return gulp.src('dist/**/*')
+                .pipe(rsync(rsyncSettings));
+            break;
+        case 'sftp':
+            return gulp.src('dist/**/*')
+                .pipe(sftp(sftpSettings));
+            break;
+    }
 });
 
 gulp.task('removedist', function() { return del.sync('dist'); });

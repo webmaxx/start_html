@@ -30,6 +30,7 @@ Start HTML Template
 * [gulp-rename][gulp-rename]
 * [gulp-cache][gulp-cache]
 * [gulp-notify][gulp-notify]
+* [gulp-rsync][gulp-rsync]
 * [gulp-sftp][gulp-sftp]
 * [gulp-imagemin][gulp-imagemin]
 * [imagemin-pngquant][imagemin-pngquant]
@@ -74,7 +75,7 @@ Start HTML Template
 * `browser-sync` - запуск сервера
 * `watch` - отслеживание изменения в файлах
 * `build` - сборка проекта
-* `deploy` - загрузка собранного проекта на сервер (логин/пароль к серверу прописываются в файле `.sftppass`)
+* `deploy` - загрузка собранного проекта на удаленный сервер
 * `removedist` - удаление папки **dist**
 * `clearcache` - очистка кеша. Используется при оптимизации изображений
 * `default` - задача по умолчанию (используется **watch**)
@@ -90,7 +91,8 @@ Start HTML Template
 * Все **css**-стили сторонних библиотек следует импортировать в файле `app/sass/_libs.sass`.
 * Все **javascript**-файлы сторонних библиотек следует подключать в файле `gulpfile.js` в задаче `js-libs`.
 * При создании своих **javascript**-файлов, их следует подключать в файле `gulpfile.js` в задаче `js`.
-* Если используется загрузка проекта на сервер, то надо скопировать файл `.sftppass.example` в `.sftppass` и прописать в нем логин/пароль для SFTP.
+* Для загрузки проекта на удаленный сервер, можно выбрать метод загрузки (`[gulp-rsync][gulp-rsync]` или `[gulp-sftp][gulp-sftp]`), путем проставления нужного значения переменной `deployMethod`.
+* Если используется SFTP загрузка проекта на сервер, то надо скопировать файл `.sftppass.example` в `.sftppass` и прописать в нем логин/пароль для SFTP.
 
 [gulp]: http://gulpjs.com/
 [bower]: https://bower.io/
@@ -113,6 +115,7 @@ Start HTML Template
 [gulp-rename]: https://www.npmjs.com/package/gulp-rename
 [gulp-cache]: https://www.npmjs.com/package/gulp-cache
 [gulp-notify]: https://www.npmjs.com/package/gulp-notify
+[gulp-rsync]: https://www.npmjs.com/package/gulp-rsync
 [gulp-sftp]: https://www.npmjs.com/package/gulp-sftp
 [gulp-imagemin]: https://www.npmjs.com/package/gulp-imagemin
 [imagemin-pngquant]: https://www.npmjs.com/package/imagemin-pngquant

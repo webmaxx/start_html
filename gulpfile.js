@@ -24,6 +24,8 @@ var gulp           = require('gulp'),
 
 var deployMethod = 'rsync'; // rsync, sftp
 
+var templatesType = 'html'; // html, pug, njk
+
 var rsyncSettings = {
     root: 'dist/',
     hostname: 'sitename.ru',
@@ -186,16 +188,25 @@ gulp.task('browser-sync', function() {
     });
 });
 
-gulp.task('watch', ['html', 'njk', 'pug', 'smartgrid', 'css', 'js', 'browser-sync'], function() {
-    gulp.watch(['app/templates/**/*.html', 'app/templates/**/*.htm'], ['html']);
-    gulp.watch(['app/templates/**/*.njk'], ['njk']);
-    gulp.watch(['app/templates/**/*.pug'], ['pug']);
+gulp.task('watch', [templatesType, 'smartgrid', 'css', 'js', 'browser-sync'], function() {
+    switch (templatesType) {
+        case 'html':
+            gulp.watch(['app/templates/**/*.html', 'app/templates/**/*.htm'], ['html']);
+            break;
+        case 'pug':
+            gulp.watch(['app/templates/**/*.pug'], ['pug']);
+            break;
+        case 'njk':
+            gulp.watch(['app/templates/**/*.njk'], ['njk']);
+            break;
+    }
+
     gulp.watch(['app/sass/**/*.sass', 'app/sass/**/*.scss'], ['css']);
     gulp.watch(['libs/**/*.js', 'app/js/app.js'], ['js']);
     gulp.watch('app/*.html', browserSync.reload);
 });
 
-gulp.task('build', ['removedist', 'html', 'njk', 'pug', 'smartgrid', 'css', 'js'], function() {
+gulp.task('build', ['removedist', templatesType, 'smartgrid', 'css', 'js'], function() {
 
     var buildFiles = gulp.src([
             'app/**/*.html',

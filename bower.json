@@ -11,6 +11,7 @@
   "dependencies": {
     "normalize-css": "normalize.css#^6.0.0",
     "wow": "wowjs#^1.1.2",
-    "jquery": "^3.2.1"
+    "jquery": "^3.2.1",
+    "animate.css": "^3.5.2"
   }
 }

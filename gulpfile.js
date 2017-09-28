@@ -24,7 +24,7 @@ var gulp           = require('gulp'),
 
 var deployMethod = 'rsync'; // rsync, sftp
 
-var templatesType = 'html'; // html, pug, njk
+var templatesType = 'njk'; // html, pug, njk
 
 var rsyncSettings = {
     root: 'dist/',

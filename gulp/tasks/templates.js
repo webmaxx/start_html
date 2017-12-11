@@ -1,4 +1,5 @@
 import gulp from 'gulp'
+import plumber from 'gulp-plumber'
 import render from 'gulp-nunjucks-render'
 import htmlbeautify from 'gulp-html-beautify'
 import browserSync from 'browser-sync'
@@ -9,6 +10,7 @@ const taskTemplates = () => {
     `${config.src.templates}/**/*${config.src.templatesExt}`,
     `!${config.src.templates}/**/_*${config.src.templatesExt}`
   ])
+    .pipe(plumber())
     .pipe(render({
       path: config.src.templates,
       data: {

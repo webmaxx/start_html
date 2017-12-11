@@ -1,0 +1,9 @@
+// Styles for IE 11
+
+=ie11($name, $value)
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+    #{$name}: $value
+
+=ie11-block()
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+    @content

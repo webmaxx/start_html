@@ -1,16 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link href="/css/app.css" rel="stylesheet" async>
-</head>
-<body>
+{% extends "layouts/_main.html" %}
+
+{% block content %}
 
 <p>Build environment: {{ ENV }}</p>
 
-<script src="js/app.js" async></script>
-</body>
-</html>
+{% endblock %}
+
+
+{% block styles %}
+<style type="text/css">
+</style>
+{% endblock %}
+
+
+{% block scripts %}
+<script>
+</script>
+{% endblock %}

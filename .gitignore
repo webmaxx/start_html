@@ -1,0 +1,4 @@
+dist/
+node_modules/
+src/sass/_smart-grid.sass
+package-lock.json

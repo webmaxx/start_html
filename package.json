@@ -1,0 +1,58 @@
+{
+  "name": "start_html_template",
+  "version": "2.0.0",
+  "description": "Start HTML template",
+  "main": "index.js",
+  "scripts": {
+    "dev": "gulp watch --env=dev",
+    "build": "gulp build --env=prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/webmaxx/start_html.git"
+  },
+  "keywords": [
+    "html",
+    "css",
+    "javascript",
+    "js",
+    "gulp",
+    "webpack",
+    "sass"
+  ],
+  "author": "webmaxx",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/webmaxx/start_html/issues"
+  },
+  "homepage": "https://github.com/webmaxx/start_html#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "browser-sync": "^2.18.13",
+    "chalk": "^2.3.0",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^4.0.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-group-css-media-queries": "^1.2.0",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-imagemin": "^4.0.0",
+    "gulp-nunjucks-render": "^2.2.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-util": "^3.0.8",
+    "gulp-webpack": "^1.5.0",
+    "node-sass": "^4.7.2",
+    "require-dir": "^0.3.2",
+    "smart-grid": "^2.0.1",
+    "vinyl-named": "^1.1.0",
+    "webpack": "^3.10.0",
+    "webpack-merge": "^4.1.1"
+  }
+}

@@ -1,8 +1,0 @@
-app/css/
-app/js/*.min.js
-app/**/*.html
-!app/templates/**/*.html
-dist/
-node_modules/
-**/Thumbs.db
-.sftppass

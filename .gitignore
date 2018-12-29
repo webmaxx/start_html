@@ -1,4 +1,4 @@
 dist/
 node_modules/
-src/sass/_smart-grid.sass
-package-lock.json
+app/styles/_smart-grid.*
+yarn-error.log

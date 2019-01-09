@@ -29,6 +29,7 @@ var htmlMode = 'html',  // html, pug, njk
     autoprefixerOptions = {
       browsers: ["> 0.1%"]
     },
+    smartgridUse = true,
     smartgridOptions = {
       outputStyle: cssMode,
       filename: '_smart-grid',
@@ -176,7 +177,9 @@ gulp.task('css', gulp.parallel(`css:${cssMode}`));
 
 gulp.task('smartgrid', function() {
   return new Promise(function(resolve, reject) {
-    smartgrid('app/styles', smartgridOptions);
+    if (smartgridUse) {
+      smartgrid('app/styles', smartgridOptions);
+    }
     resolve();
   });
 });

@@ -1,6 +1,6 @@
 {
   "name": "start_html_template",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "Start HTML template",
   "scripts": {
     "watch": "gulp"

@@ -263,7 +263,7 @@ gulp.task('clear', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch(`./app/templates/*.${htmlMode}`, gulp.series('html'));
+  gulp.watch(`./app/templates/**/*.${htmlMode}`, gulp.series('html'));
   gulp.watch(`./app/styles/**/*.${cssMode}`, gulp.series('css'));
   gulp.watch(`./app/js/**/*.${jsMode}`, gulp.series('js'));
   gulp.watch('./app/img/**/*', gulp.series('img'));

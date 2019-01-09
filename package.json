@@ -1,9 +1,10 @@
 {
   "name": "start_html_template",
-  "version": "3.1.0",
+  "version": "3.1.1",
   "description": "Start HTML template",
   "scripts": {
-    "watch": "gulp"
+    "watch": "gulp",
+    "postinstall": "gulp libs && gulp clear"
   },
   "repository": {
     "type": "git",

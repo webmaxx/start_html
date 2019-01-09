@@ -237,7 +237,7 @@ gulp.task('libs', function() {
 gulp.task('img', function() {
   return gulp.src('./app/img/**/*')
     .pipe(htmlBeautify(htmlBeautifyOptions))
-    .pipe(gulp.dest('./img'))
+    .pipe(gulp.dest('./dist/img'))
     .on('end', browserSync.reload);
 });
 
@@ -247,7 +247,7 @@ gulp.task('img', function() {
 gulp.task('fonts', function() {
   return gulp.src('./app/fonts/**/*')
     .pipe(htmlBeautify(htmlBeautifyOptions))
-    .pipe(gulp.dest('./fonts'))
+    .pipe(gulp.dest('./dist/fonts'))
     .on('end', browserSync.reload);
 });
 

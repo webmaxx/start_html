@@ -197,7 +197,6 @@ gulp.task('js:js', function() {
     .pipe(babel({presets: ["@babel/preset-env"]}))
     .pipe(gulp.dest('./dist/js'))
     .pipe(uglify())
-    .pipe(gulp.dest('./dist/js'))
     .pipe(rename({suffix: '.min'}))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/js'))

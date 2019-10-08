@@ -1813,6 +1813,16 @@ concat-stream@^1.6.0:
     readable-stream "^2.2.2"
     typedarray "^0.0.6"
 
+concat-stream@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/concat-stream/-/concat-stream-2.0.0.tgz#414cf5af790a48c60ab9be4527d56d5e41133cb1"
+  integrity sha512-MWufYdFw53ccGjCA+Ol7XJYpAlW6/prSMzuPOTRnJGcGzuhLn4Scrz7qf6o8bROZ514ltazcIFJZevcfbo0x7A==
+  dependencies:
+    buffer-from "^1.0.0"
+    inherits "^2.0.3"
+    readable-stream "^3.0.2"
+    typedarray "^0.0.6"
+
 concat-with-sourcemaps@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/concat-with-sourcemaps/-/concat-with-sourcemaps-1.1.0.tgz#d4ea93f05ae25790951b99e7b3b09e3908a4082e"
@@ -2384,7 +2394,7 @@ extend-shallow@^3.0.0, extend-shallow@^3.0.2:
     assign-symbols "^1.0.0"
     is-extendable "^1.0.1"
 
-extend@^3.0.0, extend@~3.0.2:
+extend@^3.0.0, extend@^3.0.2, extend@~3.0.2:
   version "3.0.2"
   resolved "https://registry.yarnpkg.com/extend/-/extend-3.0.2.tgz#f8b1136b4071fbd8eb140aff858b1019ec2915fa"
   integrity sha512-fjquC59cD7CyW6urNXK0FBufkZcoiGG80wTuPujX590cB5Ttln20E2UB4S/WARVqhXffZl2LNgS+gQdPIIim/g==
@@ -2525,6 +2535,11 @@ flagged-respawn@^1.0.0:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/flagged-respawn/-/flagged-respawn-1.0.1.tgz#e7de6f1279ddd9ca9aac8a5971d618606b3aab41"
   integrity sha512-lNaHNVymajmk0OJMBn8fVUAU1BtDeKIqKoVhk4xAALB57aALg6b4W0MfJ/cUE0g9YBXy5XhSlPIpYIJ7HaY/3Q==
+
+flatnest@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/flatnest/-/flatnest-1.0.0.tgz#20421ad05b46c63cad30ef14a8ec625f86b3f1c5"
+  integrity sha1-IEIa0FtGxjytMO8UqOxiX4az8cU=
 
 flush-write-stream@^1.0.2:
   version "1.0.3"
@@ -2867,6 +2882,19 @@ gulp-concat@^2.6.1:
     concat-with-sourcemaps "^1.0.0"
     through2 "^2.0.0"
     vinyl "^2.0.0"
+
+gulp-file-include@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/gulp-file-include/-/gulp-file-include-2.1.0.tgz#c142dc839915523b62e1d71d94d5d1ed91b0e83a"
+  integrity sha512-QSjCygJWehYTMmD/sqpWLl/CRaNkknp6CnCQpGfmzK/rkV5kpI88/XsoULxxtZwoGZARB54VPDiH6iHxy3+X1w==
+  dependencies:
+    balanced-match "^1.0.0"
+    concat-stream "^2.0.0"
+    extend "^3.0.2"
+    flatnest "^1.0.0"
+    plugin-error "^1.0.1"
+    through2 "^3.0.1"
+    vinyl "^2.2.0"
 
 gulp-group-css-media-queries@^1.2.2:
   version "1.2.2"
@@ -4969,6 +4997,15 @@ readable-stream@^2.0.0, readable-stream@^2.0.1, readable-stream@^2.0.2, readable
     string_decoder "~1.1.1"
     util-deprecate "~1.0.1"
 
+readable-stream@^3.0.2:
+  version "3.4.0"
+  resolved "https://registry.yarnpkg.com/readable-stream/-/readable-stream-3.4.0.tgz#a51c26754658e0a3c21dbf59163bd45ba6f447fc"
+  integrity sha512-jItXPLmrSR8jmTRmRWJXCnGJsfy85mB3Wd/uINMXA65yrnFo0cPClFIUWzo2najVNSl+mx7/4W8ttlLWJe99pQ==
+  dependencies:
+    inherits "^2.0.3"
+    string_decoder "^1.1.1"
+    util-deprecate "^1.0.1"
+
 readdirp@^2.0.0, readdirp@^2.2.1:
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/readdirp/-/readdirp-2.2.1.tgz#0e87622a3325aa33e892285caf8b4e846529a525"
@@ -5826,7 +5863,7 @@ through2@2.X, through2@^2.0.0, through2@^2.0.3, through2@~2.0.0:
     readable-stream "~2.3.6"
     xtend "~4.0.1"
 
-through2@3.0.1:
+through2@3.0.1, through2@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/through2/-/through2-3.0.1.tgz#39276e713c3302edf9e388dd9c812dd3b825bd5a"
   integrity sha512-M96dvTalPT3YbYLaKaCuwu+j06D/8Jfib0o/PxbVt6Amhv3dUAtW6rTV1jPgJSBG83I/e04Y6xkVdVhSRhi0ww==
@@ -6199,7 +6236,7 @@ vinyl-sourcemaps-apply@0.2.1, vinyl-sourcemaps-apply@^0.2.0, vinyl-sourcemaps-ap
   dependencies:
     source-map "^0.5.1"
 
-vinyl@^2.0.0, vinyl@^2.1.0:
+vinyl@^2.0.0, vinyl@^2.1.0, vinyl@^2.2.0:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/vinyl/-/vinyl-2.2.0.tgz#d85b07da96e458d25b2ffe19fece9f2caa13ed86"
   integrity sha512-MBH+yP0kC/GQ5GwBqrTPTzEfiiLjta7hTtvQtbxBgTeSXsmKQRQecjibMbxIXzVT3Y9KJK+drOz1/k+vsu8Nkg==

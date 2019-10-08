@@ -1,5 +1,6 @@
 var gulp = require('gulp'),
     babel = require('gulp-babel'),
+    fileInclude = require("gulp-file-include"),
     cleanCSS = require("gulp-clean-css"),
     ts = require('gulp-typescript'),
     uglify = require("gulp-uglify"),
@@ -77,6 +78,10 @@ var htmlMode = 'html',  // html, pug, njk
 
 gulp.task('html:html', function() {
   return gulp.src('./app/templates/*.html')
+    .pipe(fileInclude({
+      prefix: '@@',
+      basepath: './app/templates/partials'
+    }))
     .pipe(htmlBeautify(htmlBeautifyOptions))
     .pipe(gulp.dest('./dist'))
     .on('end', browserSync.reload);

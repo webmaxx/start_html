@@ -81,7 +81,8 @@ gulp.task('html:html', function() {
   return gulp.src('./app/templates/*.html')
     .pipe(fileInclude({
       prefix: '@@',
-      basepath: './app/templates/partials'
+      basepath: './app/templates/partials',
+      context: htmlData
     }))
     .pipe(htmlBeautify(htmlBeautifyOptions))
     .pipe(gulp.dest('./dist'))

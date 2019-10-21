@@ -64,11 +64,12 @@ var htmlMode = 'html',  // html, pug, njk
       'end_with_newline': false
     },
     htmlData = {
-      // Custom data, uses in pug or nunjucks templates.
+      // Custom data, uses in templates.
       //
       // varname: 'value'
       //
       // Examples:
+      //   html - @@varname
       //   pug - #{varname}
       //   nunjucks - {{ varname }}
     };
@@ -282,9 +283,13 @@ gulp.task('serve', function() {
   });
 });
 
-gulp.task('default', gulp.series(
+gulp.task('build', gulp.series(
   gulp.parallel('clear'),
   gulp.parallel('smartgrid', 'libs'),
   gulp.parallel('html', 'js', 'css', 'img', 'fonts'),
+));
+
+gulp.task('default', gulp.series(
+  gulp.parallel('build'),
   gulp.parallel('watch', 'serve')
 ));

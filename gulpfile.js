@@ -127,12 +127,10 @@ gulp.task('html', gulp.parallel(`html:${htmlMode}`));
 
 gulp.task('css:css', function() {
   return gulp.src('./app/styles/*.css')
-    .pipe(sourcemaps.init())
     .pipe(postcss([
       autoprefixer(autoprefixerOptions)
     ]))
     .pipe(gcmq())
-    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(cleanCSS({compatibility: "ie8", level: {1: {specialComments: 0}}}))
@@ -154,6 +152,8 @@ gulp.task('css:sass', function() {
     .pipe(gulp.dest('./dist/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(cleanCSS({compatibility: "ie8", level: {2: {specialComments: 0}}}))
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(rename({suffix: '.dev'}))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css'))
     .on('end', browserSync.reload);
@@ -175,6 +175,8 @@ gulp.task('css:less', function() {
     .pipe(gulp.dest('./dist/css'))
     .pipe(rename({suffix: '.min'}))
     .pipe(cleanCSS({compatibility: "ie8", level: {2: {specialComments: 0}}}))
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(rename({suffix: '.dev'}))
     .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./dist/css'))
     .on('end', browserSync.reload);

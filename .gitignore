@@ -1,4 +1,7 @@
+build/
 dist/
 node_modules/
 app/styles/_smart-grid.*
+package-lock.json
+yarn.lock
 yarn-error.log

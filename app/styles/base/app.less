@@ -1,0 +1,36 @@
+*, ::before, ::after {
+    box-sizing: border-box;
+}
+
+:root {
+    overflow: hidden;
+}
+
+html, body {
+    width: 100%;
+    min-width: 320px;
+    font-family: @font-default;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    min-height: 100vh;
+    font-size: 1.6rem;
+    line-height: 1.7;
+    color: @color-text-default;
+    background-color: @color-body-bg;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: auto;
+
+    main {
+        flex-grow: 1;
+    }
+}

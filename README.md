@@ -6,6 +6,7 @@ Start HTML Template
 ## Используемые технологии
 
 * [Gulp][gulp]
+* [Webpack][webpack]
 * [Babel][babel]
 * [Pug][pug]
 * [Nunjucks][nunjucks]
@@ -17,18 +18,27 @@ Start HTML Template
 
 ## Установка
 
-1. [Скачать](https://github.com/webmaxx/start_html/archive/master.zip) и распаковать шаблон
-2. Установить **Node** модули командой: `"yarn"` или `"npm i"`
+1. Выполнить команду: `"git clone https://github.com/webmaxx/start_html"` (либо [скачать](https://github.com/webmaxx/start_html/archive/master.zip) и распаковать шаблон)
+2. В папке с шаблоном установить **Node** модули командой: `"yarn"` или `"npm i"`
 
 ## Настройка
 
-В файле `"gulpfile.js"` в секции `"Config"` можно выставить настройки для используемых шаблонов, стилей и js-скриптов.
+В файле `"gulpfile.js"` в секции `"Config"` можно выставить настройки для используемых шаблонов и стилей.
 
-## Запуск
+## Команды
 
-- Выполнить команду: `"gulp"` или `"yarn run watch"` или `"npm run watch"`
+- Запуска проекта в режиме разработки: `"yarn watch"` или `"npm run watch"`
+- Сборка проекта: `"yarn build"` или `"npm run build"`
+
+## Структура
+
+- `"app"` - папка исходным кодом проекта
+- `"build"` - папка с собранным проектом (появляется после выполнения команды для сборки)
+- `"dist"` - папка с собранным проектом в режиме разработки
+- `"app-examples"` - папка с примерами для шаблонов и стилей
 
 [gulp]: http://gulpjs.com/
+[webpack]: https://webpack.js.org/
 [babel]: http://babeljs.io/
 [pug]: https://pugjs.org/
 [nunjucks]: http://mozilla.github.io/nunjucks/

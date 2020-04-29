@@ -1,6 +1,6 @@
 {
   "name": "start_html_template",
-  "version": "4.0.0",
+  "version": "4.0.1",
   "description": "Start HTML template",
   "scripts": {
     "build": "gulp build --env=prod",
@@ -36,9 +36,9 @@
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.0",
-    "@babel/plugin-transform-runtime": "^7.9.0",
-    "@babel/preset-env": "^7.9.5",
+    "@babel/core": "^7.9.6",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
     "autoprefixer": "^9.7.6",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",

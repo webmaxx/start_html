@@ -1,6 +1,10 @@
 {
     "compilerOptions": {
-        "target": "es5",
-        "allowJs": true
+        "target": "es6",
+        "module": "es6",
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "lib": ["es6", "dom"]
     }
 }

@@ -332,11 +332,14 @@ const scripts = {
                             exclude: '/node_modules/'
                         },
                         {
-                            test: /\.ts?$/,
-                            use: 'ts-loader',
+                            test: /\.tsx?$/,
+                            loaders: ['babel-loader', 'ts-loader'],
                             exclude: /node_modules/,
                         },
                     ]
+                },
+                resolve: {
+                    extensions: [".ts", ".tsx", ".js"]
                 },
                 mode: ENV.isProd ? 'production' : 'development',
                 devtool: ENV.isDev ? 'eval-source-map' : 'none'

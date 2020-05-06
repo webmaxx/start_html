@@ -19,6 +19,7 @@ const util = require('gulp-util');
 const del = require('del');
 const browserSync = require('browser-sync').create();
 const packageJson = require('./package.json');
+const path = require('path');
 
 /******************************************************************************/
 /** Config                                                                    */
@@ -316,8 +317,8 @@ styles.scss.displayName = 'styles:scss';
 const scripts = {
     compile: function() {
         return gulp.src([
-                `${utils.appPath('scripts')}/*.{js,ts}`,
-                `!${utils.appPath('scripts')}/_*.{js,ts}`
+                `${utils.appPath('scripts')}/*.{js,ts,tsx}`,
+                `!${utils.appPath('scripts')}/_*.{js,ts,tsx}`
             ])
             .pipe(vinylNamed())
             .pipe(webpack({
@@ -329,13 +330,24 @@ const scripts = {
                         {
                             test: /\.js$/,
                             loader: 'babel-loader',
+                            include: path.resolve(__dirname, utils.appPath('scripts')),
                             exclude: '/node_modules/'
                         },
                         {
                             test: /\.tsx?$/,
-                            loaders: ['babel-loader', 'ts-loader'],
+                            loaders: [
+                                'babel-loader',
+                                {
+                                    loader: 'ts-loader',
+                                    options: {
+                                        transpileOnly: true,
+                                        experimentalWatchApi: true,
+                                    }
+                                }
+                            ],
+                            include: path.resolve(__dirname, utils.appPath('scripts')),
                             exclude: /node_modules/,
-                        },
+                        }
                     ]
                 },
                 resolve: {

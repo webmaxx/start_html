@@ -36,6 +36,7 @@ const config = {
     cssFiles: [
         './app/libs/normalize.css/normalize.css',
         './app/styles/base/variables.css',
+        './app/styles/base/animate.css',
         './app/styles/base/fonts.css',
         './app/styles/base/app.css',
         './app/styles/base/typography.css',

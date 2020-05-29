@@ -1,6 +1,6 @@
 {
   "name": "start_html_template",
-  "version": "4.0.3",
+  "version": "4.1.0",
   "description": "Start HTML template",
   "scripts": {
     "build": "gulp build --env=prod",
@@ -31,15 +31,15 @@
   },
   "homepage": "https://github.com/webmaxx/start_html#readme",
   "dependencies": {
-    "animate.css": "^3.7.2",
+    "animate.css": "^4.1.0",
     "jquery": "^3.5.1",
     "normalize.css": "^8.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/plugin-transform-runtime": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "autoprefixer": "^9.7.6",
+    "@babel/core": "^7.10.1",
+    "@babel/plugin-transform-runtime": "^7.10.1",
+    "@babel/preset-env": "^7.10.1",
+    "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
     "browser-sync": "^2.26.7",
     "core-js": "3",
@@ -59,8 +59,8 @@
     "gulp-sass": "^4.1.0",
     "gulp-util": "^3.0.8",
     "smart-grid": "^2.1.2",
-    "ts-loader": "^7.0.2",
-    "typescript": "^3.8.3",
+    "ts-loader": "^7.0.5",
+    "typescript": "^3.9.3",
     "vinyl-named": "^1.1.0",
     "webpack-stream": "^5.2.1"
   }

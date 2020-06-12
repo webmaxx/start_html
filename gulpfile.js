@@ -8,6 +8,8 @@ const smartGrid = require('smart-grid');
 const less = require('gulp-less');
 const sass = require('gulp-sass');
 const postcss = require('gulp-postcss');
+const postcssImport = require('postcss-import');
+const postcssMediaMinMax = require('postcss-media-minmax');
 const autoprefixer = require("autoprefixer");
 const gcmq = require('gulp-group-css-media-queries');
 const cleanCss = require('gulp-clean-css');
@@ -27,24 +29,9 @@ const path = require('path');
 
 const config = {
     htmlMode: 'njk',       // html, pug, njk
-    stylesMode: 'less',    // css, sass, scss, less
+    stylesMode: 'css',    // css, sass, scss, less
     // scriptsMode: 'js',     // js, ts (not used at the moment)
 
-    /**
-     * CSS files for concatenation (used only if stylesMode == 'css')
-     */
-    cssFiles: [
-        './app/libs/normalize.css/normalize.css',
-        './app/styles/base/variables.css',
-        './app/styles/base/animate.css',
-        './app/styles/base/fonts.css',
-        './app/styles/base/app.css',
-        './app/styles/base/typography.css',
-        './app/styles/partials/header.css',
-        './app/styles/partials/main.css',
-        './app/styles/partials/footer.css',
-        './app/styles/app.css'
-    ],
     cssOutputFilename: 'app.css',
 
     folders: {
@@ -259,9 +246,7 @@ html.njk.displayName = 'html:njk';
 
 const styles = {
     css: function() {
-        const task = gulp.src(config.cssFiles, {
-            sourcemaps: ENV.isDev
-        }).pipe(concat(config.cssOutputFilename));
+        const task = styles._init();
         return styles._output(task);
     },
 
@@ -291,6 +276,8 @@ const styles = {
     _output: function(task) {
         return task
             .pipe(postcss([
+                postcssImport,
+                postcssMediaMinMax,
                 autoprefixer(config.autoprefixerOptions)
             ]))
             .pipe(gcmq())

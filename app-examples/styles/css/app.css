@@ -1,0 +1,11 @@
+@import "../libs/normalize.css/normalize.css";
+
+@import "base/variables.css";
+@import "base/animate.css";
+@import "base/fonts.css";
+@import "base/app.css";
+@import "base/typography.css";
+
+@import "partials/header.css";
+@import "partials/main.css";
+@import "partials/footer.css";

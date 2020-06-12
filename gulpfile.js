@@ -24,6 +24,20 @@ const packageJson = require('./package.json');
 const path = require('path');
 
 /******************************************************************************/
+/** Environment (not change)                                                  */
+/******************************************************************************/
+
+const ENV = {
+    mode: util.env.env || 'production',
+    isDev: false,
+    isProd: true,
+    outputMode: 'build'
+};
+
+ENV.isDev = (ENV.mode == 'dev' || ENV.mode == 'development');
+ENV.isProd = !ENV.isDev;
+
+/******************************************************************************/
 /** Config                                                                    */
 /******************************************************************************/
 
@@ -159,6 +173,8 @@ const config = {
      *
      */
     htmlData: {
+        isDev: ENV.isDev,
+        isProd: ENV.isProd,
         sitename: "Start HTML template"
     }
 };
@@ -171,20 +187,6 @@ config.folders.dist.fonts = config.folders.dist.fonts || config.folders.build.fo
 config.folders.dist.libs = config.folders.dist.libs || config.folders.build.libs;
 
 config.smartgridOptions.outputStyle = config.stylesMode;
-
-/******************************************************************************/
-/** Environment (not change)                                                  */
-/******************************************************************************/
-
-const ENV = {
-    mode: util.env.env || 'production',
-    isDev: false,
-    isProd: true,
-    outputMode: 'build'
-};
-
-ENV.isDev = (ENV.mode == 'dev' || ENV.mode == 'development');
-ENV.isProd = !ENV.isDev;
 
 /******************************************************************************/
 /** HTML                                                                      */

@@ -29,7 +29,7 @@ const path = require('path');
 
 const config = {
     htmlMode: 'njk',       // html, pug, njk
-    stylesMode: 'css',    // css, sass, scss, less
+    stylesMode: 'less',    // css, sass, scss, less
     // scriptsMode: 'js',     // js, ts (not used at the moment)
 
     cssOutputFilename: 'app.css',

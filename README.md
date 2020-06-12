@@ -1,9 +1,9 @@
 Start HTML Template
 ===================
 
-Стартовый шаблон для верстки
+Startup template for layout
 
-## Используемые технологии
+## Used
 
 * [Gulp][gulp]
 * [Webpack][webpack]
@@ -15,27 +15,28 @@ Start HTML Template
 * [TypeScript][typescript]
 * [Smart Grid][smart-grid]
 * [BrowserSync][browser-sync]
+* [PostCSS][postcss]
 
-## Установка
+## Install
 
-1. Выполнить команду: `"git clone https://github.com/webmaxx/start_html"` (либо [скачать](https://github.com/webmaxx/start_html/archive/master.zip) и распаковать шаблон)
-2. В папке с шаблоном установить **Node** модули командой: `"yarn"` или `"npm i"`
+1. Run command: `"git clone https://github.com/webmaxx/start_html"` (or [download](https://github.com/webmaxx/start_html/archive/master.zip) and unpack archive)
+2. In folder with template install **Node** modules run command: `"yarn"` or `"npm i"`
 
-## Настройка
+## Settings
 
-В файле `"gulpfile.js"` в секции `"Config"` можно выставить настройки для используемых шаблонов и стилей.
+In file `"gulpfile.js"` to section `"Config"` you can set the settings for the templates and styles used.
 
-## Команды
+## Commands
 
-- Запуска проекта в режиме разработки: `"yarn watch"` или `"npm run watch"`
-- Сборка проекта: `"yarn build"` или `"npm run build"`
+- Run project in dev-mode: `"yarn watch"` or `"npm run watch"`
+- Build project: `"yarn build"` or `"npm run build"`
 
-## Структура
+## Structure folders
 
-- `"app"` - папка исходным кодом проекта
-- `"build"` - папка с собранным проектом (появляется после выполнения команды для сборки)
-- `"dist"` - папка с собранным проектом в режиме разработки
-- `"app-examples"` - папка с примерами для шаблонов и стилей
+- `"app"` - project source folder
+- `"build"` - folder with the assembled project (appears after executing the command to build)
+- `"dist"` - folder with the assembled project in development mode
+- `"app-examples"` - folder with examples for templates and styles
 
 [gulp]: http://gulpjs.com/
 [webpack]: https://webpack.js.org/
@@ -47,3 +48,4 @@ Start HTML Template
 [typescript]: http://www.typescriptlang.org/
 [smart-grid]: https://github.com/dmitry-lavrik/smart-grid
 [browser-sync]: https://www.browsersync.io/
+[postcss]: https://postcss.org/

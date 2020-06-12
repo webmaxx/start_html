@@ -22,7 +22,8 @@
     "pug",
     "nunjucks",
     "gulp",
-    "webpack"
+    "webpack",
+    "postcss"
   ],
   "author": "webmaxx",
   "license": "ISC",

@@ -375,7 +375,7 @@ smartgrid.create.displayName = 'smartgrid:create';
 const libs = {
     publish: function(cb) {
         let modules = Object.keys(packageJson.dependencies).map(function(module) {
-          return `./node_modules/${module}/**/*`;
+            return `./node_modules/${module}/**/*`;
         });
 
         if (modules.length) {

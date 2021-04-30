@@ -1,0 +1,13 @@
+{% extends "layout/main.njk" %}
+
+{% block pageTitle %}
+    Index Page - {{ sitename }}
+{% endblock %}
+
+{% block content %}
+    <section class="hero">
+        <h1>{{ sitename }}</h1>
+
+        <button data-modal-open="#modal-test">Open modal</button>
+    </section>
+{% endblock %}

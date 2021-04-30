@@ -12,6 +12,7 @@
  */
 
 @font-arial: Arial;
+@font-roboto: 'Roboto', 'sans-serif';
 
 @font-default: @font-arial;
 
@@ -26,3 +27,28 @@
 @color-body-bg: #f4f8ff;
 
 @color-text-default: #333;
+
+
+/*
+ * Grid
+ */
+
+ @min-width: 320px;
+ @max-width: 1200px;
+ @offset: 100px;
+ @xs: 0;
+ @sm: 576px;
+ @md: 768px;
+ @lg: 992px;
+ @xl: 1200px;
+ @xxl: 1400px;
+
+
+/*
+ * Global CSS Variables
+ */
+
+ :root {
+    --full-screen: calc((var(--vh, 1vh) * 100) / 1.33);
+    --html-font-size: calc(100vw / 1920 * 10);
+}

@@ -5,9 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
-    {% block pageTitle %}
-        <title>{{ sitename }}</title>
-    {% endblock %}
+    <title>{% block pageTitle %}{{ sitename }}{% endblock %}</title>
 
     <link rel="stylesheet" href="css/app.min.css">
 </head>
@@ -15,18 +13,22 @@
 
 <div id="app">
     {% block header %}
-        {% include "../partials/header.njk" %}
+        {% include "partials/header.njk" %}
     {% endblock %}
 
-    {% block content %}
-    {% endblock %}
+    <div class="app-sections">
+        {% block content %}
+        {% endblock %}
+    </div>
 
     {% block footer %}
-        {% include "../partials/footer.njk" %}
+        {% include "partials/footer.njk" %}
     {% endblock %}
 
-    {% include "./_scripts.njk" %}
+    {% include "partials/modals.njk" %}
 </div>
+
+{% include "partials/scripts.njk" %}
 
 </body>
 </html>

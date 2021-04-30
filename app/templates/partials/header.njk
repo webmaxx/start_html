@@ -1,0 +1,77 @@
+{% import "components/menu.njk" as Menu %}
+
+<header class="app-header">
+    <nav>
+        {{ Menu.render({
+            cssClass: 'header-menu',
+            items: [
+                {
+                    label: 'Item 1 (active item)',
+                    url: '#!',
+                    isActive: true,
+                    subMenu: {
+                        items: [
+                            {
+                                label: 'Item 1.1',
+                                url: '#!'
+                            },
+                            {
+                                label: 'Item 1.2 (current page)',
+                                url: '#!',
+                                isActive: true,
+                                isCurrentPage: true
+                            },
+                            {
+                                label: 'Item 1.3',
+                                url: '#!'
+                            },
+                            {
+                                label: 'Item 1.4',
+                                url: '#!'
+                            },
+                            {
+                                label: 'Item 1.5',
+                                url: '#!'
+                            }
+                        ]
+                    }
+                },
+                {
+                    label: 'Item 2',
+                    url: '#!',
+                    subMenu: {
+                        items: [
+                            {
+                                label: 'Item 2.1',
+                                url: '#!'
+                            },
+                            {
+                                label: 'Item 2.2',
+                                url: '#!'
+                            },
+                            {
+                                label: 'Item 2.3',
+                                url: '#!'
+                            },
+                            {
+                                label: 'Item 2.4',
+                                url: '#!'
+                            },
+                            {
+                                label: 'Item 2.5',
+                                url: '#!'
+                            }
+                        ]
+                    }
+                },
+                {
+                    label: 'Item 3',
+                    url: '#!'
+                },
+                {
+                    label: 'Item 4 (text)'
+                }
+            ]
+        }) }}
+    </nav>
+</header>

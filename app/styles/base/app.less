@@ -2,18 +2,14 @@
     box-sizing: border-box;
 }
 
-:root {
-    overflow: hidden;
-}
-
 html, body {
     width: 100%;
-    min-width: 320px;
+    // min-width: 320px;
     font-family: @font-default;
 }
 
 html {
-    font-size: 10px;
+    font-size: var(--html-font-size);
 }
 
 body {
@@ -22,15 +18,29 @@ body {
     line-height: 1.7;
     color: @color-text-default;
     background-color: @color-body-bg;
+    overflow-x: hidden;
+
+    .modal-opened({
+        overflow: hidden;
+    });
+}
+
+.modal-opened body {
+    overflow: hidden;
 }
 
 #app {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    overflow: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr auto;
+    position: relative;
+    min-height: 100vh;
 
-    main {
-        flex-grow: 1;
-    }
+    .modal-opened({
+        .app-header,
+        .app-sections,
+        .app-footer {
+            filter: blur(4px);
+        }
+    });
 }

@@ -86,13 +86,13 @@ const config = {
     /**
      * SmartGrid settings
      */
-    smartgridUse: true,
+    smartgridUse: false,
     smartgridOptions: {
         filename: '_smart-grid',
         outputStyle: this.stylesMode,
         columns: 12,
         offset: "30px",
-        mobileFirst: false,
+        mobileFirst: true,
         container: {
             maxWidth: "1280px",
             fields: "30px"
@@ -225,8 +225,8 @@ const html = {
 
     _init: function() {
         return gulp.src([
-            `${utils.appPath('templates')}/*.${config.htmlMode}`,
-            `!${utils.appPath('templates')}/_*.${config.htmlMode}`
+            `${utils.appPath('templates')}/pages/*.${config.htmlMode}`,
+            `!${utils.appPath('templates')}/pages/_*.${config.htmlMode}`
         ]).pipe(plumber());
     },
 

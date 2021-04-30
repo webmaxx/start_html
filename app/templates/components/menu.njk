@@ -1,0 +1,46 @@
+{% macro render(menu) %}
+    <ul class="menu {{ menu.cssClass }}" role="menu">
+        {{ renderItems(menu.items) }}
+    </ul>
+{% endmacro %}
+
+{% macro renderItems(items=[]) %}
+    {% for item in items %}
+        {{ renderItem(item, loop.index0) }}
+    {% endfor %}
+{% endmacro %}
+
+{% macro renderItem(item, index) %}
+    {% set className = 'menu__item' %}
+    {% if item.isActive %} {% set className = className + ' menu__item--active' %} {% endif %}
+    {% if item.subMenu %} {% set className = className + ' menu__item--has-child' %} {% endif %}
+    {% if item.cssClass %} {% set className = className + ' ' + item.cssClass %} {% endif %}
+
+    <li
+        class="{{ className }}"
+        role="menuitem"
+        {% if item.isActive %} aria-current="page" {% endif %}
+        {% if item.subMenu %} aria-haspopup="true" {% endif %}
+    >
+        {% if item.isCurrentPage %}
+            <span class="menu__item-caption">
+                <span class="visually-hidden">Текущий пункт:</span>
+                {{ item.label|safe }}
+            </span>
+        {% elseif item.url %}
+            <a class="menu__item-link" href="{{ item.url }}">
+                {{ item.label|safe }}
+            </a>
+        {% else %}
+            <span class="menu__item-caption">
+                {{ item.label|safe }}
+            </span>
+        {% endif %}
+
+        {% if item.subMenu %}
+            <div class="menu__submenu">
+                {{ render(item.subMenu) }}
+            </div>
+        {% endif %}
+    </li>
+{% endmacro %}

@@ -1,0 +1,95 @@
+/*
+ * Accessibility
+ */
+
+.accessibility(@content) {
+    [data-accessibility-active="on"] & {
+        @content();
+    }
+}
+
+.accessibility-images-off(@content) {
+    [data-accessibility-active="on"][data-accessibility-images="off"] & {
+        @content();
+    }
+}
+
+.accessibility-images-monochrome(@content) {
+    [data-accessibility-active="on"][data-accessibility-images="monochrome"] & {
+        @content();
+    }
+}
+
+.accessibility-font-family-serif(@content) {
+    [data-accessibility-active="on"][data-accessibility-font-family="serif"] & {
+        @content();
+    }
+}
+
+.accessibility-font-size-x2(@content) {
+    [data-accessibility-active="on"][data-accessibility-font-size="x2"] & {
+        @content();
+    }
+}
+
+
+/*
+ * Media queries
+ */
+
+.media-min(@bp, @content) {
+    @media (min-width: @bp) {
+        @content();
+    }
+}
+
+.media-max(@bp, @content) {
+    @media (max-width: @bp - .02px) {
+        @content();
+    }
+}
+
+.media-between(@bpFrom, @bpTo, @content) {
+    @media (min-width: @bpFrom) and (max-width: @bpTo - .02px) {
+        @content();
+    }
+}
+
+
+/*
+ * Modals
+ */
+
+.modal-opened(@content) {
+    .modal-opened & {
+        @content();
+    }
+}
+
+
+/*
+ * Helpers
+ */
+
+.max-width(@maxWidth: var(--max-width), @offset: var(--offset)) {
+    max-width: calc(@maxWidth + (@offset * 2));
+}
+
+.offset() {
+    padding: 0 var(--offset);
+}
+
+.block-center() {
+    margin: 0 auto;
+}
+
+.visually-hidden() {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}

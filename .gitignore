@@ -1,6 +1,7 @@
 build/
 dist/
 node_modules/
+.vscode/
 app/styles/_smart-grid.*
 package-lock.json
 yarn.lock

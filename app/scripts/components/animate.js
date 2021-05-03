@@ -1,3 +1,9 @@
+/**
+ * Animate
+ *
+ * Methods:
+ * - run(node|selector, animation, [duration], [prefix])
+ */
 class Animate {
     run(element, animation, duration = '0.3s', prefix = '') {
         return new Promise((resolve, reject) => {

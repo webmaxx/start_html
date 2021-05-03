@@ -4,6 +4,7 @@ import Animate from './animate';
  * Modal
  *
  * Methods:
+ * - init()
  * - open(node|selector, [modalAnimate], [backdropAnimate])
  * - close(node|selector, [modalAnimate], [backdropAnimate])
  * - toggle(node|selector, [modalAnimateOpen], [backdropAnimateOpen], [modalAnimateClose], [backdropAnimateClose])

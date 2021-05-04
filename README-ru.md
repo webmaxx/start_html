@@ -3,6 +3,12 @@ Start HTML Template
 
 Стартовый шаблон для верстки
 
+![AppVeyor](https://img.shields.io/appveyor/build/webmaxx/start-html?style=flat-square)
+![GitHub tag (latest by date)](https://img.shields.io/github/v/tag/webmaxx/start_html?style=flat-square)
+![GitHub language count](https://img.shields.io/github/languages/count/webmaxx/start_html?style=flat-square)
+![GitHub top language](https://img.shields.io/github/languages/top/webmaxx/start_html?style=flat-square)
+![GitHub repo size](https://img.shields.io/github/repo-size/webmaxx/start_html?style=flat-square)
+
 ## Используемые технологии
 
 * [Gulp][gulp]

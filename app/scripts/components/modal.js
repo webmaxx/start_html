@@ -82,6 +82,7 @@ class Modal {
         if (modal != null) {
             this.trigger(modal, 'R.modal.opening');
             modal.classList.add(this.className);
+            modal.setAttribute('aria-expanded', true);
             this.Animate.run(modal, backdropAnimate);
             this.Animate.run(modal.querySelector('.modal__content'), modalAnimate)
                 .then(() => this.trigger(modal, 'R.modal.opened'));
@@ -102,6 +103,7 @@ class Modal {
                 .then(() => modal.classList.remove(this.className));
             this.Animate.run(modal.querySelector('.modal__content'), modalAnimate)
                 .then(() => this.trigger(modal, 'R.modal.closed'));
+            modal.setAttribute('aria-expanded', false);
             this.totalOpenedDecrement();
 
             if (this.totalOpened == 0) {

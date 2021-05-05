@@ -1,5 +1,9 @@
 {% macro render(menu) %}
-    <ul class="menu {{ menu.cssClass }}" role="menu">
+    <ul
+        class="menu {{ menu.cssClass }}"
+        role="menu"
+        {% if menu.name %}aria-label="{{ menu.name }}"{% endif %}
+    >
         {{ renderItems(menu.items) }}
     </ul>
 {% endmacro %}
